@@ -92,22 +92,24 @@ h1{
     color: white;
 }
 
+.display{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
 th {
     border: 1px solid black;
     height: 30px;
 }
 
 table {
-    width: 100%;
+    width: 80%;
     border-collapse: collapse;
 }
 
 td{
     text-align: center;
-}
-
-.display{
-    display: flex;
 }
 
 .deleteButton{
@@ -126,6 +128,16 @@ td{
 
 #lastColumn{
     border-color: white;
-    /* background-color: blue; */
-    /* z-index: 1; */
+}
+
+.tableColumn{
+    border-bottom: 1px solid black; 
+}
+
+.firstColumn{
+    border-left: 1px solid black;
+}
+
+.secondLastColumn{
+    border-right: 1px solid black;
 }

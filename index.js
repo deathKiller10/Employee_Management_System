@@ -20,12 +20,23 @@ document.getElementById("credentials").addEventListener("submit", function(event
     let cell1 = document.createElement("td");
     let cell2 = document.createElement("td");
     let cell3 = document.createElement("td");
+
+    // Delete Button
     let cell4 = document.createElement("td");
+    let lastColumnButton = document.createElement("button");
+    lastColumnButton.classList.add("deleteButton");
+    lastColumnButton.innerText = "Delete";
+    console.log(lastColumnButton.innerText);
 
     cell1.innerText = name;
+    cell1.classList.add("tableColumn", "firstColumn");
     cell2.innerText = position;
+    cell2.classList.add("tableColumn");
     cell3.innerText = salary;
-    cell4.innerHTML = `<button class="deleteButton">Delete</button>`;
+    cell3.classList.add("tableColumn", "secondLastColumn");
+    cell4.innerHTML = `<td></td>`;
+    cell4.id = "lastColumn";
+    cell4.appendChild(lastColumnButton);
 
     row.appendChild(cell1);
     row.appendChild(cell2);
@@ -33,7 +44,8 @@ document.getElementById("credentials").addEventListener("submit", function(event
     row.appendChild(cell4);
 
     table.appendChild(row);
-})
+
+});
 
 let deleteButtons = document.querySelectorAll(".deleteButton");
 deleteButtons.forEach(btn => {
@@ -41,5 +53,3 @@ deleteButtons.forEach(btn => {
         console.log(btn);
     });
 });
-
-
