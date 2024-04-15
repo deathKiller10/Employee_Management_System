@@ -1,0 +1,131 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+.header{
+    display: flex;
+    position: sticky;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+    /* background-color: #2196F3; */
+}
+
+.actions ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.actions li{
+    padding: 10px 5px;
+    /* margin: 10px; */
+}
+
+#addEmployee, #searchEmployee{
+    padding: 8px;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    color: #2196F3;
+    border-color: #2196F3;
+    cursor: pointer;
+    padding: 10px 14px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+#addEmployee:hover{
+    background-color: #2196F3;
+    color: whitesmoke;
+    transition: all 0.1s ease;
+}
+#searchEmployee:hover{
+    background-color: #2196F3;
+    color: whitesmoke;
+    transition: all 0.1s ease;
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+}
+
+form input{
+    width: 350px;
+    height: 40px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 2px solid #172432;
+    padding: 15px;
+    margin: 5px 0;
+}
+
+h1{
+    margin: 10px 0;
+}
+
+.submitForm{
+    font-size: 15px;
+    width: 100px;
+    padding: 5px 20px;
+    border-radius: 5px;
+    border-color: gray;
+    background-color: white;
+    cursor: pointer;
+    /* margin-top: 10px; */
+    /* height: 30px; */
+}
+
+.submitForm:hover{
+    background-color: gray;
+    color: white;
+}
+
+th {
+    border: 1px solid black;
+    height: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td{
+    text-align: center;
+}
+
+.display{
+    display: flex;
+}
+
+.deleteButton{
+    width: 50%;
+    height: 25px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+.deleteButton:hover{
+    background-color: #172432;
+    color: white;
+}
+
+#lastColumn{
+    border-color: white;
+    /* background-color: blue; */
+    /* z-index: 1; */
+}
