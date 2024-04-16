@@ -44,12 +44,9 @@ document.getElementById("credentials").addEventListener("submit", function(){
     table.appendChild(row);
 });
 
-let deleteButtons = document.querySelectorAll(".deleteButtons");
-console.log(deleteButtons);
+let deleteButtons = document.querySelectorAll(".deleteButton");
 for (let i = 0; i < deleteButtons.length; i++){
-    buttons[i].addEventListener("click", function(){
-        console.log(buttons[i]);
+    deleteButtons[i].addEventListener("click", function(){
+        console.log(deleteButtons[i]);
     })
 }
-
-
