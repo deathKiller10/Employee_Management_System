@@ -1,11 +1,11 @@
 let records = [];
 
-document.getElementById("credentials").addEventListener("submit", function(event){
-    event.preventDefault();
+document.getElementById("credentials").addEventListener("submit", function(){
+    // event.preventDefault();
 
-        let name = document.getElementById("eName").value;
-        let position = document.getElementById("ePosition").value;
-        let salary = document.getElementById("eSalary").value;
+    let name = document.getElementById("eName").value;
+    let position = document.getElementById("ePosition").value;
+    let salary = document.getElementById("eSalary").value;
 
     let Employee = {
         name: name,
@@ -26,7 +26,6 @@ document.getElementById("credentials").addEventListener("submit", function(event
     let lastColumnButton = document.createElement("button");
     lastColumnButton.classList.add("deleteButton");
     lastColumnButton.innerText = "Delete";
-    console.log(lastColumnButton.innerText);
 
     cell1.innerText = name;
     cell1.classList.add("tableColumn", "firstColumn");
@@ -34,7 +33,6 @@ document.getElementById("credentials").addEventListener("submit", function(event
     cell2.classList.add("tableColumn");
     cell3.innerText = salary;
     cell3.classList.add("tableColumn", "secondLastColumn");
-    cell4.innerHTML = `<td></td>`;
     cell4.id = "lastColumn";
     cell4.appendChild(lastColumnButton);
 
@@ -44,12 +42,14 @@ document.getElementById("credentials").addEventListener("submit", function(event
     row.appendChild(cell4);
 
     table.appendChild(row);
-
 });
 
-let deleteButtons = document.querySelectorAll(".deleteButton");
-deleteButtons.forEach(btn => {
-    btn.addEventListener("click", function(){
-        console.log(btn);
-    });
-});
+let deleteButtons = document.querySelectorAll(".deleteButtons");
+console.log(deleteButtons);
+for (let i = 0; i < deleteButtons.length; i++){
+    buttons[i].addEventListener("click", function(){
+        console.log(buttons[i]);
+    })
+}
+
+
