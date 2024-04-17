@@ -1,7 +1,7 @@
 let records = [];
 
-document.getElementById("credentials").addEventListener("submit", function(){
-    // event.preventDefault();
+document.getElementById("credentials").addEventListener("submit", function(event){
+    event.preventDefault();
 
     let name = document.getElementById("eName").value;
     let position = document.getElementById("ePosition").value;
@@ -44,9 +44,3 @@ document.getElementById("credentials").addEventListener("submit", function(){
     table.appendChild(row);
 });
 
-let deleteButtons = document.querySelectorAll(".deleteButton");
-for (let i = 0; i < deleteButtons.length; i++){
-    deleteButtons[i].addEventListener("click", function(){
-        console.log(deleteButtons[i]);
-    })
-}
