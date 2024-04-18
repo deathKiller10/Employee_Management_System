@@ -60,7 +60,7 @@ form{
     align-items: center;
 }
 
-form input{
+input[type=text]{
     width: 350px;
     height: 40px;
     font-size: 15px;
@@ -92,6 +92,8 @@ form input{
     border-color: gray;
     background-color: white;
     cursor: pointer;
+    height: 35px;
+    margin: 5px;
 }
 
 .submitForm:hover{
@@ -103,6 +105,7 @@ form input{
     display: flex;
     justify-content: center;
     align-content: center;
+    /* visibility: none; */
 }
 
 th {
@@ -151,3 +154,20 @@ td{
 .secondLastColumn{
     border-right: 1px solid black;
 }
+
+.displayTable{
+    font-size: 15px;
+    width: 100px;
+    padding: 5px 20px;
+    border-radius: 5px;
+    border-color: gray;
+    background-color: white;
+    cursor: pointer;
+    height: 35px;
+}
+
+.displayTable:hover{
+    background-color: gray;
+    color: white;
+}
+
