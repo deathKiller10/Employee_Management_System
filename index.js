@@ -49,7 +49,7 @@ document.getElementById("credentials").addEventListener("submit", function(event
     table.appendChild(row);
 });
 
-
+// Delete any row by clicking on the delete button
 document.addEventListener('click', (event) => {
     let table = document.getElementById("myTable");
     if (event.target.classList.contains('deleteButton')) {
