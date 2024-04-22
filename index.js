@@ -1,7 +1,5 @@
-let isAdded = [];
-let isRemoved = [];
-let x = 0;
-let rowIndex = 0;
+let isAdded = [], isRemoved = [];
+let x = 0, rowIndex = 0;
 
 document.getElementById("credentials").addEventListener("submit", function(event){
     event.preventDefault();
@@ -58,10 +56,7 @@ document.addEventListener('click', (event) => {
         const index = parseInt(event.target.classList[1].slice(6)); //Extract the index from the class
         isRemoved.push(isAdded[index-1]);
         console.log(isRemoved);
-        
         const tableRow = event.target.closest('tr');
-        // console.log(tableRow.id);
-        // console.log(tableRow.rowIndex - 1);
         table.deleteRow(tableRow.rowIndex);
     }
 });
