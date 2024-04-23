@@ -1,6 +1,54 @@
 let isAdded = [], isRemoved = [];
 let x = 0, rowIndex = 0;
 
+function Employee(name, position, salary) {
+    this.name = name;
+    this.position = position;
+    this.salary = salary;
+}
+
+isAdded.push(new Employee("Sneha", "CTO", 200000));
+isAdded.push(new Employee("Tushar", "CFO", 300000));
+// isAdded.push(new Employee("Arsalan", "CMO", 400000));
+// isAdded.push(new Employee("Nihal", "MD", 500000));
+// isAdded.push(new Employee("Rahul", "Chairman", 600000));
+
+console.log(isAdded);
+
+for (let i = 0; i < isAdded.length; i++) {
+    // table
+    let table = document.getElementById("myTable");
+    let row = document.createElement("tr"); // row
+    row.id = `row${++rowIndex}`;
+
+    // 3 columns
+    let cell1 = document.createElement("td");
+    let cell2 = document.createElement("td");
+    let cell3 = document.createElement("td");
+
+    // Delete Button
+    let cell4 = document.createElement("td");
+    let lastColumnButton = document.createElement("button");
+    lastColumnButton.classList.add("deleteButton", `button${++x}`);
+    lastColumnButton.innerText = "Delete";
+
+    cell1.innerText = isAdded[i].name;
+    cell1.classList.add("tableColumn", "firstColumn");
+    cell2.innerText = isAdded[i].position;
+    cell2.classList.add("tableColumn");
+    cell3.innerText = isAdded[i].salary;
+    cell3.classList.add("tableColumn", "secondLastColumn");
+    cell4.id = "lastColumn";
+    cell4.appendChild(lastColumnButton);
+
+    row.appendChild(cell1);
+    row.appendChild(cell2);
+    row.appendChild(cell3);
+    row.appendChild(cell4);
+
+    table.appendChild(row);
+}
+
 document.getElementById("credentials").addEventListener("submit", function(event){
     event.preventDefault();
 
@@ -8,13 +56,7 @@ document.getElementById("credentials").addEventListener("submit", function(event
     let position = document.getElementById("ePosition").value;
     let salary = document.getElementById("eSalary").value;
 
-    let Employee = {
-        name: name,
-        position: position,
-        salary: salary
-    }
-
-    isAdded.push(Employee);
+    isAdded.push(new Employee(name, position, salary));
 
     // table
     let table = document.getElementById("myTable");
@@ -49,7 +91,7 @@ document.getElementById("credentials").addEventListener("submit", function(event
     table.appendChild(row);
 });
 
-// Delete any row by clicking on the delete button
+// Delete any row by clicking 
 document.addEventListener('click', (event) => {
     let table = document.getElementById("myTable");
     if (event.target.classList.contains('deleteButton')) {
