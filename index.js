@@ -47,8 +47,6 @@ isAdded.push(new Employee("Arsalan", "CMO", 400000));
 isAdded.push(new Employee("Nihal", "MD", 500000));
 isAdded.push(new Employee("Rahul", "Chairman", 600000));
 
-console.log(isAdded);
-
 for (let i = 0; i < isAdded.length; i++) {
     enterData(isAdded[i].name, isAdded[i].position, isAdded[i].salary);
 }
@@ -68,7 +66,6 @@ document.addEventListener('click', (event) => {
     if (event.target.classList.contains('deleteButton')) {
         const index = parseInt(event.target.classList[1].slice(6)); //Extract the index from the class
         isRemoved.push(isAdded[index]);
-        // console.log(isRemoved);
         const tableRow = event.target.closest('tr');
         table.deleteRow(tableRow.rowIndex);
     }

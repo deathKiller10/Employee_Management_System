@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Searching</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <!-- <h1>Hello world</h1> -->
+    <div class="header">
+        <h1 id="companyName"><a href="./index.html">EMS</a></h1> <!--change this later-->
+        <div class="actions">
+            <ul>
+                <li><button id="addEmployee">Add Employee</button></li>
+                <li><button id="searchEmployee" onclick="location.href='./search.html'">Search an employee</button></li>
+            </ul>
+        </div>
+    </div>
+    <div class="searchEmployee">
+        <h1 class="searchHeader">Search for an employee</h1>
+        <form>
+            <input type="search" class="searchInput" placeholder="Enter employee's name">
+        </form>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
