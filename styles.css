@@ -25,6 +25,10 @@ a:visited{
     /* background-color: #2196F3; */
 }
 
+.containerHidden{
+    display: none;
+}
+
 .actions ul{
     display: flex;
     justify-content: center;
@@ -209,4 +213,12 @@ td{
 
 .searchInput::-webkit-search-cancel-button{
     size: 15px;
+}
+
+#enter{
+    text-shadow: 1px 1px 2px gray;
+}
+
+#companyName{
+    text-shadow: 1px 1px 2px gray;
 }

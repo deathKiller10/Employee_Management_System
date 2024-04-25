@@ -73,6 +73,12 @@ document.addEventListener('click', (event) => {
     }
 });
 
+document.querySelector("#searchEmployee").addEventListener("click", function(){
+    document.querySelector(".searching").classList.remove("searchEmployeeHidden");
+    document.querySelector(".container").classList.add("containerHidden");
+});
+
+
 document.querySelector(".searchInput").addEventListener("input", function(event){
     event.preventDefault();
     const filter = this.value.toLowerCase();
@@ -84,6 +90,3 @@ document.querySelector(".searchInput").addEventListener("input", function(event)
     }
 });
 
-document.querySelector("#searchEmployee").addEventListener("click", function(){
-    document.querySelector(".searching").classList.toggle("searchEmployeeHidden");
-})
