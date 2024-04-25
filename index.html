@@ -12,7 +12,7 @@
         <div class="actions">
             <ul>
                 <li><button id="addEmployee">Add Employee</button></li>
-                <li><button id="searchEmployee" onclick="location.href='./search.html'">Search an employee</button></li>
+                <li><button id="searchEmployee">Search an employee</button></li>
             </ul>
         </div>
     </div>
@@ -26,7 +26,6 @@
         </form>
         <button class="displayTable">Display</button>
     </div>
-
     <!-- Display employees -->
     <div class="display">
         <table id="myTable">
@@ -37,6 +36,14 @@
                 <th id="lastColumn"></th>
             </tr>
         </table>
+    </div>
+    <div class="searching">
+        <div class="searchEmployee">
+            <h1 class="searchHeader">Search for an employee</h1>
+            <form>
+                <input type="search" class="searchInput" placeholder="Enter employee's name">
+            </form>
+        </div>
     </div>
     <script src="index.js"></script>
 </body>

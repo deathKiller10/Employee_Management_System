@@ -1,3 +1,5 @@
+// onclick="location.href='./search.html'"
+
 let isAdded = [], isRemoved = [];
 let x = 0, rowIndex = 0;
 
@@ -41,7 +43,7 @@ function enterData(name, position, salary) {
     table.appendChild(row);
 }
 
-isAdded.push(new Employee("Sneha", "CTO", 200000));
+isAdded.push(new Employee("Sneha", "CTO", 700000));
 isAdded.push(new Employee("Tushar", "CFO", 300000));
 isAdded.push(new Employee("Arsalan", "CMO", 400000));
 isAdded.push(new Employee("Nihal", "MD", 500000));
@@ -70,3 +72,18 @@ document.addEventListener('click', (event) => {
         table.deleteRow(tableRow.rowIndex);
     }
 });
+
+document.querySelector(".searchInput").addEventListener("input", function(event){
+    event.preventDefault();
+    const filter = this.value.toLowerCase();
+    const rows = document.getElementById("myTable").rows;
+
+    for (let i = 0; i < rows.length; i++) {
+        const name = rows[i].cells[0].textContent.toLowerCase();
+        console.log(name);
+    }
+});
+
+document.querySelector("#searchEmployee").addEventListener("click", function(){
+    document.querySelector(".searching").classList.toggle("searchEmployeeHidden");
+})
