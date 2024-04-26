@@ -16,29 +16,28 @@
             </ul>
         </div>
     </div>
-    <div class="container">
-        <div class="adding">
-            <form action="#" id="credentials">
-                <h1 id="enter">Enter details</h1>
-                <input type="text" id="eName" placeholder="Enter employee's name" required>
-                <input type="text" id="ePosition" placeholder="Enter employee's position" required>
-                <input type="text" id="eSalary" placeholder="Enter employee's salary" required>
-                <input type="submit" class="submitForm" value="Add">
-            </form>
-            <button class="displayTable">Display</button>
-        </div>
-        <!-- Display employees -->
-        <div class="display">
-            <table id="myTable">
-                <tr>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Salary</th>
-                    <th id="lastColumn"></th>
-                </tr>
-            </table>
-        </div>
+    <div class="adding">
+        <form action="#" id="credentials">
+            <h1 id="enter">Enter details</h1>
+            <input type="text" id="eName" placeholder="Enter employee's name" required>
+            <input type="text" id="ePosition" placeholder="Enter employee's position" required>
+            <input type="text" id="eSalary" placeholder="Enter employee's salary" required>
+            <input type="submit" class="submitForm" value="Add">
+        </form>
+        <!-- <button class="displayTable">Display</button> -->
     </div>
+    <!-- Display employees -->
+    <div class="display">
+        <table id="myTable">
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Salary</th>
+                <th id="lastColumn"></th>
+            </tr>
+        </table>
+    </div>
+    <!-- Searching employees --> 
     <div class="searching searchEmployeeHidden">
         <div class="searchEmployee">
             <h1 class="searchHeader">Search for an employee</h1>

@@ -75,18 +75,27 @@ document.addEventListener('click', (event) => {
 
 document.querySelector("#searchEmployee").addEventListener("click", function(){
     document.querySelector(".searching").classList.remove("searchEmployeeHidden");
-    document.querySelector(".container").classList.add("containerHidden");
+    document.querySelector(".adding").classList.add("containerHidden");
+
+    let table = document.querySelector(".display");
+    let parent = table.parentNode;
+    parent.insertBefore(document.querySelector(".searching"), table);
 });
 
-
+// Searching an employee based on name and position
 document.querySelector(".searchInput").addEventListener("input", function(event){
     event.preventDefault();
     const filter = this.value.toLowerCase();
     const rows = document.getElementById("myTable").rows;
+    console.log(rows);
 
-    for (let i = 0; i < rows.length; i++) {
+    for (let i = 1; i < rows.length; i++) {
         const name = rows[i].cells[0].textContent.toLowerCase();
-        console.log(name);
+        const position = rows[i].cells[1].textContent.toLowerCase();
+        if (name.includes(filter) || position.includes(filter)){
+            rows[i].style.display = "";
+        } else {
+            rows[i].style.display = "none";
+        }
     }
 });
-
