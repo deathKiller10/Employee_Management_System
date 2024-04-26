@@ -41,7 +41,7 @@ a:visited{
     /* margin: 10px; */
 }
 
-#addEmployee, #searchEmployee{
+#addEmployee, #searchEmployee, #editEmployee{
     padding: 8px;
     border-radius: 5px;
     background-color: whitesmoke;
@@ -58,6 +58,11 @@ a:visited{
     transition: all 0.3s ease;
 }
 #searchEmployee:hover{
+    background-color: #2196F3;
+    color: whitesmoke;
+    transition: all 0.3s ease;
+}
+#editEmployee:hover{
     background-color: #2196F3;
     color: whitesmoke;
     transition: all 0.3s ease;

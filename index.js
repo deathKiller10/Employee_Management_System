@@ -87,7 +87,6 @@ document.querySelector(".searchInput").addEventListener("input", function(event)
     event.preventDefault();
     const filter = this.value.toLowerCase();
     const rows = document.getElementById("myTable").rows;
-    console.log(rows);
 
     for (let i = 1; i < rows.length; i++) {
         const name = rows[i].cells[0].textContent.toLowerCase();
