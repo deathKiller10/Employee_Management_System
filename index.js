@@ -4,6 +4,11 @@
 let isAdded = [], isRemoved = [];
 let x = 0, rowIndex = 0;
 
+let searching = document.querySelector(".searching");
+let adding = document.querySelector(".adding");
+let editing = document.querySelector(".editing");
+let display = document.querySelector(".display");
+
 function Employee(name, position, salary) {
     this.name = name;
     this.position = position;
@@ -76,21 +81,21 @@ document.addEventListener('click', (event) => {
 
 // searching an employee
 document.querySelector("#searchEmployee").addEventListener("click", function(){
-    document.querySelector(".searching").classList.remove("searchEmployeeHidden");
-    document.querySelector(".adding").classList.add("containerHidden");
-    if (!document.querySelector(".editing").classList.contains("editingHidden")){
-        document.querySelector(".editing").classList.add("editingHidden");
+    searching.classList.remove("searchEmployeeHidden");
+    adding.classList.add("containerHidden");
+    if (!editing.classList.contains("editingHidden")){
+        editing.classList.add("editingHidden");
     }
-    if (document.querySelector(".display").classList.contains("displayHidden")){
-        document.querySelector(".display").classList.remove("displayHidden");
+    if (display.classList.contains("displayHidden")){
+        display.classList.remove("displayHidden");
     }
     document.querySelectorAll("#lastColumn").forEach((element) => {
         element.style.display = "none";
     });
 
-    let table = document.querySelector(".display");
+    let table = display;
     let parent = table.parentNode;
-    parent.insertBefore(document.querySelector(".searching"), table);
+    parent.insertBefore(searching, table);
 
     // Searching an employee based on name and position
     document.querySelector(".searchInput").addEventListener("input", function(event){
@@ -112,15 +117,15 @@ document.querySelector("#searchEmployee").addEventListener("click", function(){
 
 // Editing an employee's details
 document.getElementById("editEmployee").addEventListener("click", function(){
-    document.querySelector(".editing").classList.remove("editingHidden");
-    document.querySelector(".adding").classList.add("containerHidden");
-    if (!document.querySelector(".display").classList.contains("displayHidden")){
-        document.querySelector(".display").classList.add("displayHidden");
+    editing.classList.remove("editingHidden");
+    adding.classList.add("containerHidden");
+    if (!display.classList.contains("displayHidden")){
+        display.classList.add("displayHidden");
     }
-    console.log(document.querySelector(".display").classList);
+    console.log(display.classList);
 
-    if(!document.querySelector(".searching").classList.contains("searchEmployeeHidden")){
-        document.querySelector(".searching").classList.add("searchEmployeeHidden");
+    if(!searching.classList.contains("searchEmployeeHidden")){
+        searching.classList.add("searchEmployeeHidden");
     }
     document.getElementById("searchForEdit").addEventListener("submit", function(event){
         event.preventDefault();
@@ -148,10 +153,18 @@ document.getElementById("editEmployee").addEventListener("click", function(){
             let newSalary = parseInt(document.getElementById("newSalary").value);
             isAdded[rowIndex].position = newPosition;
             isAdded[rowIndex].salary = newSalary;
-            // document.querySelector(".editEmployee").classList.add("editEmployeeHidden");
-            // if (document.querySelector(".display").classList.contains("displayHidden")){
-            //     document.querySelector(".display").classList.remove("displayHidden");
-            // }
+            let cell_1 = document.getElementById("myTable").rows[rowIndex + 1].cells[1];
+            cell_1.innerHTML = newPosition;
+            let cell_2 = document.getElementById("myTable").rows[rowIndex + 1].cells[2];
+            cell_2.innerHTML = newSalary;
+
+            let table = display;
+            let parent = table.parentNode;
+            parent.insertBefore(editing, table);
+
+            if (display.classList.contains("displayHidden")){
+                display.classList.remove("displayHidden");
+            }
         })
     })
 });
