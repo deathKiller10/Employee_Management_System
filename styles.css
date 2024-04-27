@@ -111,6 +111,7 @@ input[type=text]{
     cursor: pointer;
     height: 35px;
     margin: 5px;
+    margin-top: 8px;
 }
 
 .submitForm:hover{
@@ -125,7 +126,7 @@ input[type=text]{
 }
 
 th {
-    border: 1px solid black;
+    border: 2px solid black;
     height: 30px;
 }
 
@@ -137,6 +138,7 @@ table {
 
 td{
     text-align: center;
+    height: 36.5px;
 }
 
 .deleteButton{
@@ -144,8 +146,9 @@ td{
     height: 25px;
     cursor: pointer;
     border-radius: 5px;
-    border: 1px solid black;
-    margin: 10px;
+    border: 1.5px solid black;
+    /* margin: 10px; */
+    padding: 0 10px;
 }
 
 .deleteButton:hover{
@@ -159,19 +162,23 @@ td{
     border-color: white;
 }
 
+#lastColumnHidden{
+    display: none;
+}
+
 .tableColumn{
-    border-bottom: 1px solid black; 
+    border-bottom: 2px solid black; 
 }
 
 .firstColumn{
-    border-left: 1px solid black;
+    border-left: 2px solid black;
 }
 
 .secondLastColumn{
-    border-right: 1px solid black;
+    border-right: 2px solid black;
 }
 
-.displayTable{
+/* .displayTable{
     font-size: 15px;
     width: 100px;
     padding: 5px 20px;
@@ -180,18 +187,18 @@ td{
     background-color: white;
     cursor: pointer;
     height: 35px;
-}
+} */
 
-.displayTable:hover{
+/* .displayTable:hover{
     background-color: gray;
     color: white;
-}
+} */
 
 .searchEmployeeHidden{
     display: none;
 }
 
-.searchEmployee{
+.searchEmployee, .searchEmployeeForEdit{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -225,4 +232,82 @@ td{
 
 #companyName{
     text-shadow: 1px 1px 2px gray;
+}
+
+/* For experimenting with modal */
+/* .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  } */
+
+.editEmployee{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.editEmployee h2{
+    text-shadow: 1px 1px 2px gray;
+    margin: 10px auto;
+}
+
+.editEmployee button{
+    font-size: 15px;
+    width: fit-content;
+    padding: 5px 20px;
+    border-radius: 5px;
+    border-color: gray;
+    background-color: white;
+    cursor: pointer;
+    height: 35px;
+    margin-top: 8px;
+}
+
+.editEmployee button:hover{
+    background-color: gray;
+    color: white;
+    transition: all 0.3s;
+}
+
+.editEmployeeHidden, .editingHidden{
+    display: none;
+}
+
+.displayHidden{
+    display: none;
+}
+
+.searchHeaderEdit{
+    text-shadow: 1px 1px 2px gray;
+    margin-bottom: 10px;
 }

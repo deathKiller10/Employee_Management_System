@@ -7,16 +7,19 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+    <!-- Navigation bar -->
     <div class="header">
-        <h1 id="companyName"><a href="./index.html">EMS</a></h1> <!--change this later-->
+        <h1><a href="./index.html" id="companyName">EMS</a></h1> <!--change this later-->
         <div class="actions">
             <ul>
-                <li><button id="addEmployee">Add Employee</button></li>
-                <li><button id="searchEmployee">Search an employee</button></li>
-                <li><button id="editEmployee">Edit an employee</button></li>
+                <li><button id="addEmployee">ADD</button></li>
+                <li><button id="searchEmployee">SEARCH</button></li>
+                <li><button id="editEmployee">EDIT</button></li>
             </ul>
         </div>
     </div>
+
+    <!-- Adding employees -->
     <div class="adding">
         <form action="#" id="credentials">
             <h1 id="enter">Enter details</h1>
@@ -27,6 +30,7 @@
         </form>
         <!-- <button class="displayTable">Display</button> -->
     </div>
+
     <!-- Display employees -->
     <div class="display">
         <table id="myTable">
@@ -38,6 +42,7 @@
             </tr>
         </table>
     </div>
+
     <!-- Searching employees --> 
     <div class="searching searchEmployeeHidden">
         <div class="searchEmployee">
@@ -47,7 +52,25 @@
             </form>
         </div>
     </div>
-    <!-- Edit an employee -->
+
+    <!-- Edit an employee's details -->
+    <div class="editing editingHidden">
+        <div class="searchEmployeeForEdit">
+            <h1 class="searchHeaderEdit">Search for the employee</h1>
+            <form id="searchForEdit">
+                <input type="search" class="searchInput" placeholder="Enter employee's name" id="search">
+                <input type="submit" value="Search" class="submitForm">
+            </form>
+        </div>
+        <div class="editEmployee editEmployeeHidden">
+            <h2>Enter new details</h2>
+            <form>
+                <input type="text" placeholder="Enter new position" id="newPosition">
+                <input type="text" placeholder="Enter new salary" id="newSalary">
+                <button id="saveChanges">Save changes</button>
+            </form>
+        </div>
+    </div>
     <script src="index.js"></script>
 </body>
 </html>
