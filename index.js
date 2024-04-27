@@ -9,6 +9,26 @@ let adding = document.querySelector(".adding");
 let editing = document.querySelector(".editing");
 let display = document.querySelector(".display");
 
+document.getElementById("companyName").addEventListener("click", function(){
+    document.querySelectorAll("#lastColumn").forEach((element) => {
+        if(element.style.display === "none"){
+            element.style.display = "block";
+        }
+    });
+    if (display.classList.contains("displayHidden")){
+        display.classList.remove("displayHidden");
+    }
+    if (!searching.classList.contains("searchEmployeeHidden")){
+        searching.classList.add("searchEmployeeHidden");
+    }
+    if (adding.classList.contains("containerHidden")){
+        adding.classList.remove("containerHidden");
+    }
+    if (!editing.classList.contains("editingHidden")){
+        editing.classList.add("editingHidden");
+    }
+});
+
 function Employee(name, position, salary) {
     this.name = name;
     this.position = position;
@@ -149,6 +169,7 @@ document.getElementById("editEmployee").addEventListener("click", function(){
         // When updated details are entered and save button is clicked
         document.getElementById("saveChanges").addEventListener("click", function(event){
             event.preventDefault();
+            document.querySelector(".editEmployee").classList.add("editEmployeeHidden");
             let newPosition = document.getElementById("newPosition").value;
             let newSalary = parseInt(document.getElementById("newSalary").value);
             isAdded[rowIndex].position = newPosition;
