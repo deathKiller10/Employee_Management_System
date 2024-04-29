@@ -8,6 +8,7 @@ let searching = document.querySelector(".searching");
 let adding = document.querySelector(".adding");
 let editing = document.querySelector(".editing");
 let display = document.querySelector(".display");
+let modal = document.querySelector(".modal-overlay");
 
 document.getElementById("companyName").addEventListener("click", function(){
     document.querySelectorAll("#lastColumn").forEach((element) => {
@@ -147,45 +148,53 @@ document.getElementById("editEmployee").addEventListener("click", function(){
     if(!searching.classList.contains("searchEmployeeHidden")){
         searching.classList.add("searchEmployeeHidden");
     }
-    document.getElementById("searchForEdit").addEventListener("submit", function(event){
-        event.preventDefault();
-        let name = document.getElementById("search").value.toLowerCase();
-        let flag = 0;
-        for (let i = 0; i < isAdded.length; i++) {
-            if (isAdded[i].name.toLowerCase() === name) {
-                flag = 1;
-                rowIndex = i;
-                break;
-            }
+});
+
+document.getElementById("searchForEdit").addEventListener("submit", function(event){
+    event.preventDefault();
+    let name = document.getElementById("search").value.toLowerCase();
+    let flag = 0;
+    for (let i = 0; i < isAdded.length; i++) {
+        if (isAdded[i].name.toLowerCase() === name) {
+            flag = 1;
+            rowIndex = i;
+            break;
         }
-        if (flag === 1) {
-            console.log("Employee is present!");
-            document.querySelector(".editEmployee").classList.remove("editEmployeeHidden");
-        } else {
-            console.log("Employee is not present!");
-            alert("Employee is not present!");
-        }
+    }
+    if (flag === 1) {
+        console.log("Employee is present!");
+        // document.querySelector(".editEmployee").classList.remove("editEmployeeHidden");
+        modal.classList.add("open-modal");
+    } else {
+        alert("Employee is not present!");
+        console.log("Employee is not present!");
+    }
+});
 
-        // When updated details are entered and save button is clicked
-        document.getElementById("saveChanges").addEventListener("click", function(event){
-            event.preventDefault();
-            document.querySelector(".editEmployee").classList.add("editEmployeeHidden");
-            let newPosition = document.getElementById("newPosition").value;
-            let newSalary = parseInt(document.getElementById("newSalary").value);
-            isAdded[rowIndex].position = newPosition;
-            isAdded[rowIndex].salary = newSalary;
-            let cell_1 = document.getElementById("myTable").rows[rowIndex + 1].cells[1];
-            cell_1.innerHTML = newPosition;
-            let cell_2 = document.getElementById("myTable").rows[rowIndex + 1].cells[2];
-            cell_2.innerHTML = newSalary;
+// When updated details are entered and save button is clicked
+document.getElementById("saveChanges").addEventListener("click", function(event){
+    event.preventDefault();
+    // document.querySelector(".editEmployee").classList.add("editEmployeeHidden");
+    modal.classList.remove("open-modal");
+    let newPosition = document.getElementById("newPosition").value;
+    let newSalary = parseInt(document.getElementById("newSalary").value);
+    isAdded[rowIndex].position = newPosition;
+    isAdded[rowIndex].salary = newSalary;
+    let cell_1 = document.getElementById("myTable").rows[rowIndex + 1].cells[1];
+    cell_1.innerHTML = newPosition;
+    let cell_2 = document.getElementById("myTable").rows[rowIndex + 1].cells[2];
+    cell_2.innerHTML = newSalary;
 
-            let table = display;
-            let parent = table.parentNode;
-            parent.insertBefore(editing, table);
+    let table = display;
+    let parent = table.parentNode;
+    parent.insertBefore(editing, table);
 
-            if (display.classList.contains("displayHidden")){
-                display.classList.remove("displayHidden");
-            }
-        })
-    })
+    if (display.classList.contains("displayHidden")){
+        display.classList.remove("displayHidden");
+    }
+});
+
+const closeBtn = document.querySelector(".close-btn");
+closeBtn.addEventListener("click", function () {
+    modal.classList.remove("open-modal");
 });
